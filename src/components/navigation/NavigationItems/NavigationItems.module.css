@@ -1,0 +1,28 @@
+.NavigationItems {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.NavigationItems div {
+    display: flex;
+}
+
+.NavigationItem {
+    display: block;
+    padding: 20px 30px;
+    font-weight: 600;
+}
+
+.NavigationItem:nth-child(6) {
+    margin-left: auto;
+}
+
+.NavigationItem:last-child {
+    padding-right: 0;
+}
+
+.NavigationItem:link, .NavigationItem:visited {
+    text-decoration: none;
+    color: black;
+}
