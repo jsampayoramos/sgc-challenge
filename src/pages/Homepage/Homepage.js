@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import styles from './Homepage.module.css';
-import Stamp from '../../assets/images/stamp@2x.png';
+import styles from "./Homepage.module.css";
+import Stamp from "../../assets/images/stamp@2x.png";
 
-const Homepage = () => {
+const Homepage = React.forwardRef((props, ref) => {
     return (
-        <section className={styles.Homepage}>
-            <img src={Stamp} alt='Logo stamp' />
+        <section className={styles.Homepage} id="home" ref={ref}>
+            <img src={Stamp} alt="Logo stamp" />
             <div>
                 <h2>THE BEST FOODIE</h2>
                 <h2>EXPERIENCE</h2>
@@ -14,6 +14,6 @@ const Homepage = () => {
             </div>
         </section>
     );
-};
+});
 
 export default Homepage;

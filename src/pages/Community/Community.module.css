@@ -1,0 +1,103 @@
+.Community {
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+    padding-top: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 110px;
+    padding-left: 110px;
+    flex-wrap: wrap;
+}
+
+.SectionTitleContainer {
+    width: 215px;
+    padding: 0 10px;
+    font-size: 1.6rem;
+    position: absolute;
+    left: 30%;
+    top: 50px;
+}
+
+.SectionTitleContainer p {
+    font-size: 1.1rem;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.SectionTitleContainer hr {
+    border: 3px solid rgb(255, 218, 201);
+    background-color: rgb(255, 218, 201);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 66px;
+    z-index: -50;
+}
+
+.CardOne,
+.CardTwo,
+.CardThree {
+    padding: 30px 15px;
+    position: relative;
+    transition: transform 1000ms ease-out;
+}
+
+.CardDisapperar {
+    transform: translateY(150%);
+}
+
+.CardOne {
+    margin-left: auto;
+}
+
+.CardTwo {
+    margin-right: auto;
+}
+
+.CardOne > div:first-child,
+.CardTwo > div:first-child {
+    position: absolute;
+    bottom: 0;
+    z-index: -100;
+}
+
+.CardOne > div:first-child {
+    right: 0;
+}
+
+.CardTwo > div:first-child {
+    left: 8%;
+}
+
+.CardOne > div:nth-child(2) {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: -100;
+}
+
+.CardTwo {
+    display: flex;
+}
+
+.CardThree {
+    width: 100%;
+    display: flex;
+}
+
+.ExtraTextContainer {
+    padding: 60px 40px;
+}
+
+.ExtraTextContainer p {
+    max-width: 175px;
+    font-size: 0.9rem;
+}
+
+.CardThree .ExtraTextContainer {
+    margin-right: auto;
+    padding-left: 0;
+}

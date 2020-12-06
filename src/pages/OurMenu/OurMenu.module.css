@@ -1,0 +1,83 @@
+.OurMenu {
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    padding-right: 110px;
+    padding-left: 110px;
+    background-color: #f8f8f8;
+    align-items: stretch;
+    position: relative;
+}
+
+.TitleContainer {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 200;
+}
+
+.OurMenu h2 {
+    font-size: 2.9rem;
+}
+
+.TitleContainer > h2 {
+    width: 240px;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+    margin-bottom: 10px;
+}
+
+.TitleContainer > h2 > hr {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid rgb(255, 218, 201);
+    background-color: rgb(255, 218, 201);
+    z-index: -50;
+}
+
+.CollumOne,
+.CollumTwo {
+    width: 25%;
+    padding-top: 175px;
+    background-color: #f8f8f8;
+}
+
+.CollumOne h2,
+.CollumTwo h2 {
+    margin-bottom: 20px;
+}
+
+.CollumOne {
+    border-right: 2px solid lightgrey;
+    z-index: 200;
+}
+
+.CollumTwo {
+    border-right: 2px solid lightgrey;
+}
+
+.CollumTwo:last-child {
+    border-right: none;
+}
+
+.CollumTwo h2,
+.OurMenu > div:nth-child(4) h2 {
+    transform: translateX(-10px);
+}
+
+.OurMenu > div:nth-child(3) {
+    z-index: 100;
+}
+
+.OurMenu > div:nth-child(4) {
+    z-index: 50;
+}

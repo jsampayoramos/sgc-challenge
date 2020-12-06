@@ -1,0 +1,45 @@
+.CommunityCard {
+    display: flex;
+    width: 525px;
+    justify-content: space-between;
+}
+
+.PostContent {
+    padding: 40px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.PostContent h3 {
+    margin-bottom: 15px;
+}
+
+.PostContent p {
+    font-size: 0.9rem;
+}
+
+.SocialContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.SocialContainer div:first-child {
+    margin-right: 20px;
+}
+
+.SocialContainer div svg {
+    margin-right: 5px;
+}
+
+.ImageContainer,
+.PostContent {
+    width: 47%;
+    box-shadow: 5px 5px 30px #ddd, -5px -5px 30px #ddd;
+    background-color: white;
+}
+
+.ImageContainer img {
+    width: 100%;
+}

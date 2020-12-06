@@ -1,7 +1,7 @@
 .Homepage {
-    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
-    background-image: url('../../assets/images/bg-pic@2x.png');
+    background-image: url("../../assets/images/bg-pic@2x.png");
     background-size: cover;
     background-position: center;
     position: relative;

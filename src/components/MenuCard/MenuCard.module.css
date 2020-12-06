@@ -1,0 +1,23 @@
+.MenuCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.MenuCard h4 {
+    font-size: 0.8rem;
+}
+
+.MenuCard p {
+    font-size: 1rem;
+    color: #605959;
+    margin: 15px 0;
+}
+
+.MenuCard div {
+    font-size: 0.8rem;
+    border: 3px solid rgb(255, 218, 201);
+    padding: 5px 10px;
+    font-weight: 600;
+}
