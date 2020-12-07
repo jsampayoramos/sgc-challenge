@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Button from "../../components/ui/Button/Button";
 import MenuCard from "../../components/MenuCard/MenuCard";
@@ -7,6 +7,16 @@ import * as foodMenu from "./ourMenuContent";
 import styles from "./OurMenu.module.css";
 
 const OurMenu = React.forwardRef((props, ref) => {
+    const [transform, setTranform] = useState(props.sectionHeight);
+
+    useEffect(() => {
+        if (props.scrollY > props.sectionStart) {
+            setTranform(
+                props.sectionHeight - (props.scrollY - props.sectionStart)
+            );
+        }
+    }, [props.scrollY, props.sectionStart, props.sectionHeight]);
+
     const starters = foodMenu.starters.map((starter) => (
         <MenuCard key={starter.title} {...starter} />
     ));
@@ -25,28 +35,46 @@ const OurMenu = React.forwardRef((props, ref) => {
 
     return (
         <section className={styles.OurMenu} id="ourmenu" ref={ref}>
-            <div className={styles.TitleContainer}>
-                <h2>
-                    <hr />
-                    OUR MENU
-                </h2>
-                <Button>KNOW MORE</Button>
-            </div>
-            <div className={styles.CollumOne}>
-                <h2>STARTERS</h2>
-                {starters}
-            </div>
-            <div className={styles.CollumTwo}>
-                <h2>MAIN COURSES</h2>
-                {mainCourses}
-            </div>
-            <div className={styles.CollumOne}>
-                <h2>SIDES</h2>
-                {sides}
-            </div>
-            <div className={styles.CollumTwo}>
-                <h2>DESSERTS</h2>
-                {desserts}
+            <div>
+                <div className={styles.TitleContainer}>
+                    <h2>
+                        <hr />
+                        OUR MENU
+                    </h2>
+                    <Button>KNOW MORE</Button>
+                </div>
+                <div className={styles.CollumOne}>
+                    <div style={{ transform: `translateY(${-transform}px)` }}>
+                        <h2>STARTERS</h2>
+                        {starters}
+                    </div>
+                </div>
+                <div className={styles.CollumTwo}>
+                    <div style={{ transform: `translateY(${transform}px)` }}>
+                        <h2>MAIN COURSES</h2>
+                        {mainCourses}
+                    </div>
+                </div>
+                <div className={styles.CollumThree}>
+                    <div
+                        style={{
+                            transform: `translateY(${-transform + 100}px)`,
+                        }}
+                    >
+                        <h2>SIDES</h2>
+                        {sides}
+                    </div>
+                </div>
+                <div className={styles.CollumFour}>
+                    <div
+                        style={{
+                            transform: `translateY(${transform - 100}px)`,
+                        }}
+                    >
+                        <h2>DESSERTS</h2>
+                        {desserts}
+                    </div>
+                </div>
             </div>
         </section>
     );

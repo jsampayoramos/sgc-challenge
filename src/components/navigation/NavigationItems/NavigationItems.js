@@ -7,6 +7,9 @@ const NavigationItems = (props) => {
     return (
         <ul className={styles.NavigationItems}>
             <div>
+                <HashLink smooth to="#home" className={styles.Logo}>
+                    LOGO
+                </HashLink>
                 <HashLink smooth to="#about" className={styles.NavigationItem}>
                     ABOUT
                 </HashLink>

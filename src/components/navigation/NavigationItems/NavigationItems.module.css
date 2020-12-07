@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex: 1;
+    max-width: 1140px;
 }
 
 .NavigationItems div {
@@ -22,7 +23,19 @@
     padding-right: 0;
 }
 
-.NavigationItem:link, .NavigationItem:visited {
+.NavigationItem:link,
+.NavigationItem:visited {
     text-decoration: none;
     color: black;
+}
+
+.Logo:link,
+.Logo:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.Logo {
+    display: block;
+    padding: 20px 30px 20px 0;
 }

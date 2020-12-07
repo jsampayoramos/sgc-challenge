@@ -1,0 +1,30 @@
+.SideRuler {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.SideRuler hr {
+    margin: 20px 5px;
+    width: 25%;
+    border: 1px solid black;
+    background-color: black;
+    transition: width 500ms ease-out;
+}
+
+.SideRuler div {
+    position: relative;
+}
+
+.SideRuler h4 {
+    position: absolute;
+    top: 11px;
+    left: 0;
+    margin-left: 5px;
+    transition: transform 500ms ease-out;
+}

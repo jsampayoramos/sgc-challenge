@@ -28,10 +28,10 @@ const Community = React.forwardRef((props, ref) => {
             setCardOneClass([styles.CardOne]);
             setTimeout(() => {
                 setCardTwoClass([styles.CardTwo]);
-            }, 800);
+            }, 500);
             setTimeout(() => {
                 setCardThreeClass([styles.CardThree]);
-            }, 1600);
+            }, 1000);
         }
     }, [props.section, cardOneClass.length]);
 

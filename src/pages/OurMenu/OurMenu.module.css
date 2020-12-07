@@ -1,12 +1,19 @@
 .OurMenu {
     min-height: 100vh;
-    max-width: 100%;
-    display: flex;
-    padding-right: 110px;
-    padding-left: 110px;
+    width: 100%;
     background-color: #f8f8f8;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.OurMenu > div {
+    display: flex;
     align-items: stretch;
     position: relative;
+    overflow: hidden;
+    max-width: 1140px;
+    width: 100%;
 }
 
 .TitleContainer {
@@ -45,18 +52,23 @@
 }
 
 .CollumOne,
-.CollumTwo {
+.CollumTwo,
+.CollumThree,
+.CollumFour {
     width: 25%;
     padding-top: 175px;
     background-color: #f8f8f8;
 }
 
 .CollumOne h2,
-.CollumTwo h2 {
+.CollumTwo h2,
+.CollumThree h2,
+.CollumFour h2 {
     margin-bottom: 20px;
 }
 
-.CollumOne {
+.CollumOne,
+.CollumThree {
     border-right: 2px solid lightgrey;
     z-index: 200;
 }
@@ -65,19 +77,16 @@
     border-right: 2px solid lightgrey;
 }
 
-.CollumTwo:last-child {
-    border-right: none;
-}
-
 .CollumTwo h2,
-.OurMenu > div:nth-child(4) h2 {
+.CollumThree h2,
+.CollumFour h2 {
     transform: translateX(-10px);
 }
 
-.OurMenu > div:nth-child(3) {
+.CollumTwo {
     z-index: 100;
 }
 
-.OurMenu > div:nth-child(4) {
+.CollumThree {
     z-index: 50;
 }
