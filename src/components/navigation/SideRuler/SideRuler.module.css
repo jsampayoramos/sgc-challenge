@@ -28,3 +28,9 @@
     margin-left: 5px;
     transition: transform 500ms ease-out;
 }
+
+@media only screen and (max-width: 700px) {
+    .SideRuler {
+        display: none;
+    }
+}

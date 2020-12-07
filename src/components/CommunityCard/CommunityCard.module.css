@@ -43,3 +43,25 @@
 .ImageContainer img {
     width: 100%;
 }
+
+@media only screen and (max-width: 700px) {
+    .CommunityCard {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .CommunityCard {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .ImageContainer,
+    .PostContent {
+        width: 100%;
+    }
+
+    .PostContent {
+        padding: 20px;
+    }
+}

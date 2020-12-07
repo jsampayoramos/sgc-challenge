@@ -1,6 +1,5 @@
 .Homepage {
-    max-width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("../../assets/images/bg-pic@2x.png");
     background-size: cover;
     background-position: center;
@@ -37,4 +36,21 @@
 .Homepage div h2:last-child {
     font-size: 30px;
     margin-top: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    .Homepage div h2:first-child {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .Homepage div h2:nth-child(2) {
+        font-size: 50px;
+        line-height: 55px;
+    }
+
+    .Homepage div h2:last-child {
+        font-size: 20px;
+        margin-top: 5px;
+    }
 }

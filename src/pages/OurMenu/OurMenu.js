@@ -8,6 +8,7 @@ import styles from "./OurMenu.module.css";
 
 const OurMenu = React.forwardRef((props, ref) => {
     const [transform, setTranform] = useState(props.sectionHeight);
+    const [viewportWidth, setViewportWidth] = useState(null);
 
     useEffect(() => {
         if (props.scrollY > props.sectionStart) {
@@ -16,6 +17,10 @@ const OurMenu = React.forwardRef((props, ref) => {
             );
         }
     }, [props.scrollY, props.sectionStart, props.sectionHeight]);
+
+    useEffect(() => {
+        setViewportWidth(window.innerWidth);
+    }, []);
 
     const starters = foodMenu.starters.map((starter) => (
         <MenuCard key={starter.title} {...starter} />
@@ -44,13 +49,27 @@ const OurMenu = React.forwardRef((props, ref) => {
                     <Button>KNOW MORE</Button>
                 </div>
                 <div className={styles.CollumOne}>
-                    <div style={{ transform: `translateY(${-transform}px)` }}>
+                    <div
+                        style={{
+                            transform:
+                                viewportWidth > 850
+                                    ? `translateY(${-transform}px)`
+                                    : "0",
+                        }}
+                    >
                         <h2>STARTERS</h2>
                         {starters}
                     </div>
                 </div>
                 <div className={styles.CollumTwo}>
-                    <div style={{ transform: `translateY(${transform}px)` }}>
+                    <div
+                        style={{
+                            transform:
+                                viewportWidth > 850
+                                    ? `translateY(${transform}px)`
+                                    : 0,
+                        }}
+                    >
                         <h2>MAIN COURSES</h2>
                         {mainCourses}
                     </div>
@@ -58,7 +77,10 @@ const OurMenu = React.forwardRef((props, ref) => {
                 <div className={styles.CollumThree}>
                     <div
                         style={{
-                            transform: `translateY(${-transform + 100}px)`,
+                            transform:
+                                viewportWidth > 850
+                                    ? `translateY(${-transform + 100}px)`
+                                    : 0,
                         }}
                     >
                         <h2>SIDES</h2>
@@ -68,7 +90,10 @@ const OurMenu = React.forwardRef((props, ref) => {
                 <div className={styles.CollumFour}>
                     <div
                         style={{
-                            transform: `translateY(${transform - 100}px)`,
+                            transform:
+                                viewportWidth > 850
+                                    ? `translateY(${transform - 100}px)`
+                                    : 0,
                         }}
                     >
                         <h2>DESSERTS</h2>

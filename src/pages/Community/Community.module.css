@@ -104,3 +104,86 @@
     margin-right: auto;
     padding-left: 0;
 }
+
+@media only screen and (max-width: 900px) {
+    .Community {
+        padding-top: 300px;
+    }
+
+    .ExtraTextContainer {
+        width: 525px;
+        padding: 10px 20px 0 20px;
+    }
+
+    .ExtraTextContainer p {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .CardOne,
+    .CardTwo {
+        margin: auto;
+    }
+
+    .CardTwo,
+    .CardThree {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .CardThree .ExtraTextContainer {
+        margin: auto;
+        padding: 0 20px 10px 20px;
+    }
+
+    .CardOne > div:first-child img,
+    .CardOne > div:nth-child(2) img,
+    .CardTwo > div:first-child img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .SectionTitleContainer h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .SectionTitleContainer hr {
+        top: 53px;
+        width: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .SectionTitleContainer {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .SectionTitleContainer p {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .Community {
+        padding-top: 30px;
+        justify-content: center;
+    }
+
+    .ExtraTextContainer {
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .ExtraTextContainer p {
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
+    }
+}

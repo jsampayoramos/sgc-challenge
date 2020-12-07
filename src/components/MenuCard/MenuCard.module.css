@@ -21,3 +21,9 @@
     padding: 5px 10px;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 500px) {
+    .MenuCard {
+        padding: 10px 30px;
+    }
+}
