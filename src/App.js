@@ -11,49 +11,45 @@ library.add(faHeart, faComment);
 
 const App = () => {
     const [section, setSection] = useState(1);
-    const [sectionOne, setSectionOne] = useState(null);
     const [sectionTwo, setSectionTwo] = useState(null);
     const [sectionThree, setSectionThree] = useState(null);
-    const [sectionTwoHeight, setSectionTwoHeight] = useState(null);
     const [sectionThreeHeight, setSectionThreeHeight] = useState(null);
     const [yPosition, setYPosition] = useState(0);
+    const homepageRef = useRef(null);
     const communityRef = useRef(null);
     const ourMenuRef = useRef(null);
-    const homepageRef = useRef(null);
 
     useEffect(() => {
-        setSectionOne(homepageRef.current.offsetTop);
         setSectionTwo(communityRef.current.offsetTop);
-        setSectionThree(communityRef.current.offsetHeight);
+        setSectionThree(ourMenuRef.current.offsetTop);
         setSectionThreeHeight(ourMenuRef.current.offsetHeight);
-        setSectionTwoHeight(communityRef.current.offsetHeight);
     }, []);
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setYPosition(window.scrollY);
             if (
-                window.scrollY < sectionTwo &&
-                section !== 1 &&
-                sectionTwo !== null
+                window.scrollY < sectionTwo * 0.4 &&
+                sectionTwo &&
+                section !== 1
             ) {
                 setSection(1);
             }
 
             if (
-                window.scrollY > sectionTwo &&
-                window.scrollY < sectionThree &&
-                section !== 2 &&
-                sectionTwo !== null &&
-                sectionThree !== null
+                window.scrollY > sectionTwo * 0.4 &&
+                window.scrollY < sectionThree * 0.7 &&
+                sectionTwo &&
+                sectionThree &&
+                section !== 2
             ) {
                 setSection(2);
             }
 
             if (
-                window.scrollY > sectionThree &&
-                section !== 3 &&
-                sectionThree !== null
+                window.scrollY > sectionThree * 0.7 &&
+                sectionThree &&
+                section !== 3
             ) {
                 setSection(3);
             }
@@ -67,7 +63,7 @@ const App = () => {
             <OurMenu
                 section={section}
                 sectionHeight={sectionThreeHeight}
-                sectionStart={sectionThree}
+                sectionStart={sectionThree * 0.5}
                 ref={ourMenuRef}
                 scrollY={yPosition}
             />
